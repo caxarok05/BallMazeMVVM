@@ -5,7 +5,7 @@ public class StandaloneInput : AbstractInput
 {
     public override bool GetInput()
     {
-        return Input.GetMouseButtonDown(0);
+        return Input.GetMouseButton(0);
     }
 
     public override Vector3 GetVector(bool cameraToScreenWorldPoint = false)

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7558419715154052446}
   - component: {fileID: 929751703735808509}
   - component: {fileID: 5864510264356383108}
+  - component: {fileID: 4306089779572214966}
   m_Layer: 0
   m_Name: CoinAddParticle
   m_TagString: Untagged
@@ -287,7 +288,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.3
+      scalar: 0.25
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -611,7 +612,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.7
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4830,3 +4831,15 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &4306089779572214966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3417488678436963779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de872eebd3a30d41a506b8dc20a8bbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

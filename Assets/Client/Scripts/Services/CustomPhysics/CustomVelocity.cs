@@ -1,13 +1,16 @@
-using System.Numerics;
+using UnityEngine;
 
-public class CustomVelocity
+public static class CustomVelocity
 {
-    public Vector3 GetVectorDiff(Vector3 start, Vector3 finish)
+    private static float Interpolation = 0.002f;
+    public static Vector3 GetVectorDiff(Vector3 currentPosition, Vector3 previousPosition)
     {
-        return Vector3.Subtract(start, finish);
+        Vector3 ballVelocity = (currentPosition - previousPosition) / Time.deltaTime;
+        ballVelocity = Vector3.Lerp(ballVelocity, Vector3.zero, Interpolation);
+        return ballVelocity;
     }
 
-    public Vector3 ReflectVector(Vector3 vector, Vector3 normal)
+    public static Vector3 ReflectVector(Vector3 vector, Vector3 normal)
     {
         return Vector3.Reflect(vector, normal);
     }

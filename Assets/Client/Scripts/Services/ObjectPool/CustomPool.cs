@@ -4,13 +4,14 @@ using UnityEngine;
 
 namespace Client.Scripts.Services
 {
-    public class CustomPool<T> where T : Component
+    public class CustomPool<T> where T : MonoBehaviour
     {
         private readonly IPoolFactory<T> _poolFactory;
         private readonly List<T> _objects;
 
         public CustomPool(IPoolFactory<T> poolFactory, int prewarmObjects)
         {
+            Debug.Log("Custom Pool " + typeof(T).Name);
             _poolFactory = poolFactory;
             _objects = new List<T>();
 
@@ -33,13 +34,13 @@ namespace Client.Scripts.Services
                 return default;
             }
 
-            if (_objects.FirstOrDefault(x => !x.gameObject.activeInHierarchy) == null)
+            if (_objects.FirstOrDefault(x => !x.isActiveAndEnabled) == null)
             {
-                obj = _objects.FirstOrDefault(x => x.gameObject.activeInHierarchy);
+                obj = _objects.FirstOrDefault(x => x.isActiveAndEnabled);
                 Debug.LogError("Reset last object in pool");
             }
             else
-                obj = _objects.FirstOrDefault(x => !x.gameObject.activeInHierarchy) ?? Create();
+                obj = _objects.FirstOrDefault(x => !x.isActiveAndEnabled) ?? Create();
 
             obj.gameObject.SetActive(true);
             return obj;

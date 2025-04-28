@@ -2,7 +2,7 @@
 
 namespace Client.Scripts.Services
 {
-    public class PoolFactory<T> : IPoolFactory<T> where T : Component
+    public class PoolFactory<T> : IPoolFactory<T> where T : MonoBehaviour
     {
         private GameObject _parent;
         private readonly T _prefab;

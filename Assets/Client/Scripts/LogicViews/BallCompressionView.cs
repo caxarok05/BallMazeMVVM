@@ -1,30 +1,32 @@
 ﻿using Cysharp.Threading.Tasks;
+using System;
 using UnityEngine;
 
 public class BallCompressionView : MonoBehaviour
 {
-    private Vector3 normalScale = Vector3.one;
-    private Vector3 compressedScale = new Vector3(1, 1, 1);
+    [SerializeField] private float _compressionSpeed = 5;
+    private Vector3 _normalScale = Vector3.one;
+    private Vector3 _compressedScale = new Vector3(1, 1, 0.7f);
 
     public async void TryCompress()
     {
-        if (gameObject.transform.localScale == normalScale)
+        if (gameObject.transform.localScale == _normalScale)
             await CompressBall();
     }
 
     private async UniTask CompressBall()
     {
-        while(transform.localScale != compressedScale)
+        while(transform.localScale != _compressedScale)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, compressedScale, Time.deltaTime);
+            transform.localScale = Vector3.Lerp(transform.localScale, _compressedScale, Time.deltaTime * _compressionSpeed);
             await UniTask.Yield();
         }
-        while (transform.localScale != normalScale)
+        while (transform.localScale != _normalScale)
         {
-            transform.localScale = Vector3.Lerp(transform.localScale, normalScale, Time.deltaTime);
+            transform.localScale = Vector3.Lerp(transform.localScale, _normalScale, Time.deltaTime * _compressionSpeed);
             await UniTask.Yield();
         }
-        transform.localScale = normalScale;
+        transform.localScale = _normalScale;
     }  
    
 }
