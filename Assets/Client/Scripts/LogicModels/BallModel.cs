@@ -1,7 +1,6 @@
-﻿using Client.Scripts.LogicViews;
-using Client.Scripts.Services;
+﻿using Client.Scripts.Infrastructure.Signals;
+using Client.Scripts.LogicViews;
 using System;
-using UniRx.Toolkit;
 using UnityEngine;
 using Zenject;
 
@@ -9,44 +8,44 @@ namespace Client.Scripts.LogicModels
 {
     public class BallModel : IInitializable, IDisposable
     {
-        private BallView _ballView;
-        private BallCompressionView _compressionView;
-        private LineView _lineView;
-        private LineModel _lineModel;
-        private BallRotationView _rotationView;
+        private readonly BallView _ballView;
+        private readonly BallCompressionView _compressionView;
+        private readonly LineView _lineView;
+        private readonly BallRotationView _rotationView;
+        private readonly SignalBus _signalBus;
 
         public BallModel(
             BallView ballView,
-            LineView lineView, 
-            LineModel lineModel, 
-            BallCompressionView compressionView, 
-            BallRotationView rotationView)
+            LineView lineView,
+            BallCompressionView compressionView,
+            BallRotationView rotationView,
+            SignalBus signalBus)
         {
             _ballView = ballView;
             _lineView = lineView;
-            _lineModel = lineModel;
             _compressionView = compressionView;
             _rotationView = rotationView;
+            _signalBus = signalBus;
         }
         public void Initialize()
         {
-            _ballView.OnMouseClickedDown += ShowLine;
-            _ballView.OnMouseClickedUp += HideLine;
-            _ballView.RequestVelocity += OnVelocityRequested;
-            _ballView.RequestRotation += SetRotation;
-            _ballView.ChangeRotationVector += SetRotationVector;
-            _ballView.HitBorder += OnWallHit;
-            _lineView.RequestBallPosition += SetBallPosition;
+            _signalBus.Subscribe<OnBallClickedDown>(ShowLine);
+            _signalBus.Subscribe<OnBallClickedUp>(HideLine);
+            _signalBus.Subscribe<RequestVelocity>(OnVelocityRequested);
+            _signalBus.Subscribe<RequestRotation>(SetRotation);
+            _signalBus.Subscribe<ChangeRotationVector>(SetRotationVector);
+            _signalBus.Subscribe<HitBorder>(OnWallHit);
+            _signalBus.Subscribe<RequestBallPosition>(SetBallPosition);
         }
         public void Dispose()
         {
-            _ballView.OnMouseClickedDown -= ShowLine;
-            _ballView.OnMouseClickedUp -= HideLine;
-            _ballView.RequestVelocity -= OnVelocityRequested;
-            _ballView.RequestRotation -= SetRotation;
-            _ballView.ChangeRotationVector -= SetRotationVector;
-            _ballView.HitBorder -= OnWallHit;
-            _lineView.RequestBallPosition -= SetBallPosition;
+            _signalBus.TryUnsubscribe<OnBallClickedDown>(ShowLine);
+            _signalBus.TryUnsubscribe<OnBallClickedUp>(HideLine);
+            _signalBus.TryUnsubscribe<RequestVelocity>(OnVelocityRequested);
+            _signalBus.TryUnsubscribe<RequestRotation>(SetRotation);
+            _signalBus.TryUnsubscribe<ChangeRotationVector>(SetRotationVector);
+            _signalBus.TryUnsubscribe<HitBorder>(OnWallHit);
+            _signalBus.TryUnsubscribe<RequestBallPosition>(SetBallPosition);
         }
 
         public void SetBallPosition()
@@ -54,24 +53,19 @@ namespace Client.Scripts.LogicModels
             _lineView.SetBallPosition(_ballView.BallPosition);
         }
 
-        private void OnVelocityRequested(Vector3 currentPosition, Vector3 previousPosition)
+        private void OnVelocityRequested(RequestVelocity args)
         {
-            _ballView.SetVelocity(CustomVelocity.GetVectorDiff(currentPosition, previousPosition));
+            _ballView.SetVelocity(CustomVelocity.GetVectorDiff(args.currentPosition, args.previousPosition));
         }
 
-        public void SetVelocity(Vector3 target, Vector3 current)
+        public void SetRotation(RequestRotation args)
         {
-            _ballView.SetVelocity(_lineModel.CalculateLineVelocity(current, target));
+            _rotationView.Rotate(args.velocity);
         }
 
-        public void SetRotation(Vector3 velocity)
+        public void SetRotationVector(ChangeRotationVector args)
         {
-            _rotationView.Rotate(velocity);
-        }
-
-        public void SetRotationVector(Vector3 direction)
-        {
-            _rotationView.SetRotationVector(direction);
+            _rotationView.SetRotationVector(args.direction);
         }
 
         public void ShowLine()
@@ -84,10 +78,10 @@ namespace Client.Scripts.LogicModels
             _lineView.SetLineOff();
         }
 
-        private void OnWallHit(Vector3 ballVelocity, Vector3 contactPointNormal)
+        private void OnWallHit(HitBorder args)
         {
             _compressionView.TryCompress();
-            Vector3 reflectedVelocity = CustomVelocity.ReflectVector(ballVelocity, contactPointNormal);
+            Vector3 reflectedVelocity = CustomVelocity.ReflectVector(args.ballVelocity, args.contactPointNormal);
             _ballView.SetVelocity(reflectedVelocity);
             _rotationView.SetRotationVector(reflectedVelocity);
             

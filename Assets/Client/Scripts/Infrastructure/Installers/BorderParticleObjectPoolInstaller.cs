@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace Scripts.Infrastructure.Installers
+namespace Client.Scripts.Infrastructure.Installers
 {
     public class BorderParticleObjectPoolInstaller : MonoInstaller
     {

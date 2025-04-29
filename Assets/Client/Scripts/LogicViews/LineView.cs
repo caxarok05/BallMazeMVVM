@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Client.Scripts.Infrastructure.Signals;
+using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
 
@@ -7,16 +8,17 @@ namespace Client.Scripts.LogicViews
     [RequireComponent(typeof(LineRenderer))]
     public class LineView : MonoBehaviour
     {
-        public event UnityAction RequestBallPosition;
 
         private Vector3 _ballPosition;
         private LineRenderer _line;
         private AbstractInput _inputService;
+        private SignalBus _signalBus;
 
         [Inject]
-        public void Construct(AbstractInput input)
+        public void Construct(AbstractInput input, SignalBus signalBus)
         {
             _inputService = input;
+            _signalBus = signalBus;
         }
 
         private void Start()
@@ -28,7 +30,7 @@ namespace Client.Scripts.LogicViews
         {
             if (_inputService.GetInput())
             {
-                RequestBallPosition?.Invoke();
+                _signalBus.TryFire<RequestBallPosition>();
                 _line.SetPosition(0, _ballPosition);
                 _line.SetPosition(1, _inputService.GetVector(true));
             }

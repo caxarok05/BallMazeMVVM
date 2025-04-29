@@ -11,7 +11,6 @@ namespace Client.Scripts.Services
 
         public CustomPool(IPoolFactory<T> poolFactory, int prewarmObjects)
         {
-            Debug.Log("Custom Pool " + typeof(T).Name);
             _poolFactory = poolFactory;
             _objects = new List<T>();
 

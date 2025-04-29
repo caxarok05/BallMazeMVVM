@@ -1,4 +1,5 @@
-﻿using Client.Scripts.LogicModels;
+﻿using Client.Scripts.Infrastructure.Signals;
+using Client.Scripts.LogicModels;
 using Client.Scripts.LogicViews;
 using UnityEngine;
 using Zenject;

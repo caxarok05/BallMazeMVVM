@@ -1,4 +1,5 @@
-﻿using Client.Scripts.Services;
+﻿using Client.Scripts.Infrastructure.Signals;
+using Client.Scripts.Services;
 using Cysharp.Threading.Tasks;
 using System;
 using UnityEngine;
@@ -9,13 +10,6 @@ namespace Client.Scripts.LogicViews
 {
     public class BallView : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
-
-        public event Action OnMouseClickedDown;
-        public event Action OnMouseClickedUp;
-        public event Action<Vector3, Vector3> RequestVelocity;
-        public event Action<Vector3, Vector3> HitBorder;
-        public event Action<Vector3> RequestRotation;
-        public event Action<Vector3> ChangeRotationVector;
         public Vector3 BallPosition { get; private set; }
 
         private Vector3 _ballVelocity;
@@ -26,14 +20,16 @@ namespace Client.Scripts.LogicViews
         private Camera _camera;
         private AbstractInput _inputManager;
         private CustomPool<BorderParticleWrapper> _pool;
+        private SignalBus _signalBus;
         
         private const int BorderLayer = 6;
 
         [Inject]
-        public void Construct(AbstractInput input, CustomPool<BorderParticleWrapper> customPool)
+        public void Construct(AbstractInput input, CustomPool<BorderParticleWrapper> customPool, SignalBus signalBus)
         {
             _inputManager = input;
             _pool = customPool;
+            _signalBus = signalBus;
         }
 
         private void Awake()
@@ -47,8 +43,8 @@ namespace Client.Scripts.LogicViews
             if (_ballVelocity != Vector3.zero)
             {
                 transform.Translate(_ballVelocity * Time.deltaTime);
-                RequestVelocity?.Invoke(transform.position, _previousPosition);
-                RequestRotation?.Invoke(_ballVelocity);
+                _signalBus.TryFire(new RequestVelocity(transform.position, _previousPosition));
+                _signalBus.TryFire(new RequestRotation(_ballVelocity));
                 _previousPosition = transform.position;
                 BallPosition = transform.position;
             }
@@ -59,11 +55,10 @@ namespace Client.Scripts.LogicViews
             if (collision.gameObject.layer == BorderLayer)
             {
                 ContactPoint contactPoint = collision.contacts[0];
-                HitBorder?.Invoke(_ballVelocity, contactPoint.normal);
+                _signalBus.TryFire(new HitBorder(_ballVelocity, contactPoint.normal));
 
                 BorderParticleWrapper particle = _pool.Get();
-                particle.gameObject.transform.position = contactPoint.point;
-                particle.gameObject.transform.rotation = Quaternion.LookRotation(contactPoint.normal);
+                particle.gameObject.transform.SetPositionAndRotation(contactPoint.point, Quaternion.LookRotation(contactPoint.normal));
                 particle.GetComponent<ParticleSystem>().Play();
                 await ReleaseParticle(particle);
             }
@@ -77,13 +72,13 @@ namespace Client.Scripts.LogicViews
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            OnMouseClickedDown?.Invoke();
+            _signalBus.TryFire<OnBallClickedDown>();
             BallPosition = gameObject.transform.position;
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            OnMouseClickedUp?.Invoke();
+            _signalBus.TryFire<OnBallClickedUp>();
             _ray = _camera.ScreenPointToRay(_inputManager.GetVector());
 
             if (Physics.Raycast(_ray.origin, _ray.direction, out _raycastHit, Mathf.Infinity))
@@ -91,7 +86,7 @@ namespace Client.Scripts.LogicViews
                 Vector3 lineVelocity = _raycastHit.point - transform.position;
                 _ballVelocity = new Vector3(lineVelocity.x, 0f, lineVelocity.z);
             }
-            ChangeRotationVector?.Invoke(_ballVelocity);
+            _signalBus.TryFire(new ChangeRotationVector(_ballVelocity));
         }
 
         public void SetVelocity(Vector3 velocity) => _ballVelocity = velocity;
