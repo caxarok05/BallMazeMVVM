@@ -1,4 +1,5 @@
 using Client.Scripts.LogicModels;
+using Client.Scripts.Presenters;
 using Client.Scripts.Services;
 using Zenject;
 
@@ -7,7 +8,7 @@ namespace Client.Scripts.Infrastructure.Installers
     public class ServiceInstaller : MonoInstaller
     {
         private AbstractInput _inputManager;
-        public HedgehogView hedgehogView;
+        public HedgehogPresenter hedgehogView;
 
         public override void InstallBindings()
         {

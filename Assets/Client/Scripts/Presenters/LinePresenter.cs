@@ -3,10 +3,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using Zenject;
 
-namespace Client.Scripts.LogicViews
+namespace Client.Scripts.Presenters
 {
     [RequireComponent(typeof(LineRenderer))]
-    public class LineView : MonoBehaviour
+    public class LinePresenter : MonoBehaviour
     {
 
         private Vector3 _ballPosition;

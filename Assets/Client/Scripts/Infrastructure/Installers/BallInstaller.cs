@@ -1,6 +1,7 @@
 ﻿using Client.Scripts.Infrastructure.Signals;
+using Client.Scripts.Logic;
 using Client.Scripts.LogicModels;
-using Client.Scripts.LogicViews;
+using Client.Scripts.Presenters;
 using UnityEngine;
 using Zenject;
 
@@ -8,10 +9,10 @@ namespace Client.Scripts.Infrastructure.Installers
 {
     public class BallInstaller : MonoInstaller
     {
-        [SerializeField] private BallView _ballView;
-        [SerializeField] private LineView _lineView;
-        [SerializeField] private BallCompressionView _compressionView;
-        [SerializeField] private BallRotationView _rotationView;
+        [SerializeField] private BallPresenter _ballView;
+        [SerializeField] private LinePresenter _lineView;
+        [SerializeField] private BallCompressionPresenter _compressionView;
+        [SerializeField] private BallRotationPresenter _rotationView;
         public override void InstallBindings()
         {
             BindModels();
@@ -20,13 +21,13 @@ namespace Client.Scripts.Infrastructure.Installers
 
         private void BindModels()
         {
-            Container.Bind<LineView>().FromInstance(_lineView).AsSingle();
-            Container.Bind<BallView>().FromInstance(_ballView).AsSingle();
-            Container.Bind<BallCompressionView>().FromInstance(_compressionView).AsSingle();
-            Container.Bind<BallRotationView>().FromInstance(_rotationView).AsSingle();
+            Container.Bind<LinePresenter>().FromInstance(_lineView).AsSingle();
+            Container.Bind<BallPresenter>().FromInstance(_ballView).AsSingle();
+            Container.Bind<BallCompressionPresenter>().FromInstance(_compressionView).AsSingle();
+            Container.Bind<BallRotationPresenter>().FromInstance(_rotationView).AsSingle();
             
-            Container.BindInterfacesAndSelfTo<LineModel>().FromNew().AsSingle();
-            Container.BindInterfacesAndSelfTo<BallModel>().FromNew().AsSingle();
+            Container.BindInterfacesAndSelfTo<Line>().FromNew().AsSingle();
+            Container.BindInterfacesAndSelfTo<Ball>().FromNew().AsSingle();
         }
     }
 }

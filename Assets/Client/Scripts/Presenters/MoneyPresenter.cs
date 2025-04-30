@@ -1,18 +1,11 @@
 ﻿using Client.Scripts.Services;
 using Cysharp.Threading.Tasks;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using UniRx.Toolkit;
 using UnityEngine;
 using Zenject;
 
-namespace Assets.Client.Scripts.LogicViews
+namespace Client.Scripts.Presenters
 {
-    public class MoneyView : MonoBehaviour
+    public class MoneyPresenter : MonoBehaviour
     {
         private CustomPool<MoneyPickedParticleWrapper> _pool;
         private const int PlayerLayer = 7;
@@ -25,7 +18,7 @@ namespace Assets.Client.Scripts.LogicViews
 
         private async void OnCollisionEnter(Collision collision)
         {
-            if(collision.gameObject.layer == PlayerLayer)
+            if (collision.gameObject.layer == PlayerLayer)
             {
                 gameObject.SetActive(false);
                 MoneyPickedParticleWrapper particle = _pool.Get();

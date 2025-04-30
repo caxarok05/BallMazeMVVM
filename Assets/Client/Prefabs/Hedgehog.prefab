@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6456900176550183630}
   - component: {fileID: 7879455053930129562}
-  - component: {fileID: -557878941290808519}
+  - component: {fileID: 2906514533579207333}
   m_Layer: 0
   m_Name: Hedgehog
   m_TagString: Untagged
@@ -55,7 +55,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.33279195, y: 0.388418, z: 0.45466962}
   m_Center: {x: -0.0024088724, y: 0.17817242, z: 0.033214968}
---- !u!114 &-557878941290808519
+--- !u!114 &2906514533579207333
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -64,7 +64,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 87107445955623544}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72e96059355f61545b352bb146c14c65, type: 3}
+  m_Script: {fileID: 11500000, guid: 8e11c63e8179d224da36452a2a8eaf0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1151799679355414845

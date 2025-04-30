@@ -1,9 +1,8 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Client.Scripts.LogicViews
+namespace Client.Scripts.Presenters
 {
-    public class CameraView : MonoBehaviour
+    public class CameraPresenter : MonoBehaviour
     {
         [SerializeField] private GameObject _ballObject;
         [SerializeField] private float _speed;

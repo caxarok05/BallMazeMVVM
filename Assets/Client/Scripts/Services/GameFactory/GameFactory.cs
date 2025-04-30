@@ -1,4 +1,6 @@
 ﻿using Client.Scripts.Data;
+using Client.Scripts.Logic;
+using Client.Scripts.Presenters;
 using Client.Scripts.Services;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +11,10 @@ namespace Client.Scripts.LogicModels
     public class GameFactory : IGameFactory
     {
         //make AssetProvider insted of ctor
-        public HedgehogView hedgehogPrefab;
+        public HedgehogPresenter hedgehogPrefab;
         private readonly IJsonDataService _dataService;
 
-        public GameFactory(HedgehogView hedgehogPrefab, IJsonDataService dataService)
+        public GameFactory(HedgehogPresenter hedgehogPrefab, IJsonDataService dataService)
         {
             this.hedgehogPrefab = hedgehogPrefab;
             _dataService = dataService;
@@ -38,7 +40,7 @@ namespace Client.Scripts.LogicModels
 
         private void CreateHedgehog(HedgehogStateMachine stateMachine, Vector3 startPoint)
         {
-            HedgehogView hedgehod = Object.Instantiate(hedgehogPrefab);
+            HedgehogPresenter hedgehod = Object.Instantiate(hedgehogPrefab);
             hedgehod.Construct(stateMachine, startPoint);
         }
     }

@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
-namespace Client.Scripts.LogicModels
+namespace Client.Scripts.Logic
 {
     public class HedgehogPoint : IState
     {

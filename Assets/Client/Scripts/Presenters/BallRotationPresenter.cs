@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Client.Scripts.LogicViews
+namespace Client.Scripts.Presenters
 {
-    public class BallRotationView : MonoBehaviour
+    public class BallRotationPresenter : MonoBehaviour
     {
         public void Rotate(Vector3 velocity)
         {

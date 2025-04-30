@@ -1,4 +1,4 @@
-﻿namespace Client.Scripts.LogicModels
+﻿namespace Client.Scripts.Logic
 {
     public interface IStateMachineView
     {

@@ -6,9 +6,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Zenject;
 
-namespace Client.Scripts.LogicViews
+namespace Client.Scripts.Presenters
 {
-    public class BallView : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+    public class BallPresenter : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         public Vector3 BallPosition { get; private set; }
 
@@ -18,18 +18,20 @@ namespace Client.Scripts.LogicViews
         private Ray _ray;
         private RaycastHit _raycastHit;
         private Camera _camera;
+        private BallRotationPresenter _ballRotationPresenter;
         private AbstractInput _inputManager;
         private CustomPool<BorderParticleWrapper> _pool;
         private SignalBus _signalBus;
-        
+
         private const int BorderLayer = 6;
 
         [Inject]
-        public void Construct(AbstractInput input, CustomPool<BorderParticleWrapper> customPool, SignalBus signalBus)
+        public void Construct(AbstractInput input, CustomPool<BorderParticleWrapper> customPool, SignalBus signalBus, BallRotationPresenter ballRotationPresenter)
         {
             _inputManager = input;
             _pool = customPool;
             _signalBus = signalBus;
+            _ballRotationPresenter = ballRotationPresenter;
         }
 
         private void Awake()
@@ -43,8 +45,8 @@ namespace Client.Scripts.LogicViews
             if (_ballVelocity != Vector3.zero)
             {
                 transform.Translate(_ballVelocity * Time.deltaTime);
-                _signalBus.TryFire(new RequestVelocity(transform.position, _previousPosition));
-                _signalBus.TryFire(new RequestRotation(_ballVelocity));
+                SetVelocity(CustomVelocity.GetVectorDiff(transform.position, _previousPosition));
+                _ballRotationPresenter.Rotate(_ballVelocity);
                 _previousPosition = transform.position;
                 BallPosition = transform.position;
             }
@@ -86,7 +88,7 @@ namespace Client.Scripts.LogicViews
                 Vector3 lineVelocity = _raycastHit.point - transform.position;
                 _ballVelocity = new Vector3(lineVelocity.x, 0f, lineVelocity.z);
             }
-            _signalBus.TryFire(new ChangeRotationVector(_ballVelocity));
+            _ballRotationPresenter.SetRotationVector(_ballVelocity);
         }
 
         public void SetVelocity(Vector3 velocity) => _ballVelocity = velocity;

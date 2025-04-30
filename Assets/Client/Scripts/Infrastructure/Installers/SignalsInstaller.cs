@@ -16,9 +16,6 @@ namespace Client.Scripts.Infrastructure.Installers
             Container.DeclareSignal<OnBallClickedDown>();
             Container.DeclareSignal<OnBallClickedUp>();
             Container.DeclareSignal<RequestBallPosition>();
-            Container.DeclareSignal<RequestVelocity>();
-            Container.DeclareSignal<RequestRotation>();
-            Container.DeclareSignal<ChangeRotationVector>();
             Container.DeclareSignal<HitBorder>();
         }
     }

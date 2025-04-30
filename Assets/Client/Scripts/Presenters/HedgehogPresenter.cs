@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Client.Scripts.Logic;
+using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using Zenject;
 
-namespace Client.Scripts.LogicModels
+namespace Client.Scripts.Presenters
 {
-    public class HedgehogView : MonoBehaviour
+    public class HedgehogPresenter : MonoBehaviour
     {
         private IStateMachineView _stateMachine;
 

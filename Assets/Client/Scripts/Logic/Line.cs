@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-namespace Client.Scripts.LogicModels
+namespace Client.Scripts.Logic
 {
-    public class LineModel
+    public class Line
     {
         public Vector3 CalculateLineVelocity(Vector3 start, Vector3 end)
         {

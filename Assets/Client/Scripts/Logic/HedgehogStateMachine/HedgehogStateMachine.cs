@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Client.Scripts.LogicModels
+namespace Client.Scripts.Logic
 {
     public class HedgehogStateMachine : IStateMachineView, IStateMachineState
     {
