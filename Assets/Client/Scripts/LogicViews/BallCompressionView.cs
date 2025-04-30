@@ -14,6 +14,8 @@ public class BallCompressionView : MonoBehaviour
             await CompressBall();
     }
 
+    //need more info uni task 
+    //zero allocation? what tf is that
     private async UniTask CompressBall()
     {
         while(transform.localScale != _compressedScale)

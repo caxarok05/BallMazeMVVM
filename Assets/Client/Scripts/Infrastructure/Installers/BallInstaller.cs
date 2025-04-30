@@ -15,6 +15,7 @@ namespace Client.Scripts.Infrastructure.Installers
         public override void InstallBindings()
         {
             BindModels();
+            Container.Resolve<IGameFactory>().CreateEnemy();
         }
 
         private void BindModels()

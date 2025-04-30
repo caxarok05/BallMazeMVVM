@@ -1,0 +1,146 @@
+{
+  "LevelAmount": 2,
+  "LevelData": [
+    {
+      "Level": 1,
+      "hedgehogAmount": 2,
+      "HedgehogDatas": [
+        {
+          "HedgeHogPoints": [
+            {
+              "X": 8,
+              "Y": 0,
+              "Z": -8,
+              "Speed": 4
+            },
+            {
+              "X": -8,
+              "Y": 0,
+              "Z": -8,
+              "Speed": 8
+            },
+            {
+              "X": -8,
+              "Y": 0,
+              "Z": 8,
+              "Speed": 4
+            },
+            {
+              "X": -8,
+              "Y": 0,
+              "Z": -8,
+              "Speed": 8
+            }
+          ]
+        },
+        {
+          "HedgeHogPoints": [
+            {
+              "X": -8,
+              "Y": 0,
+              "Z": 8,
+              "Speed": 6
+            },
+            {
+              "X": 8,
+              "Y": 0,
+              "Z": 8,
+              "Speed": 3
+            },
+            {
+              "X": 8,
+              "Y": 0,
+              "Z": -8,
+              "Speed": 6
+            },
+            {
+              "X": 8,
+              "Y": 0,
+              "Z": 8,
+              "Speed": 3
+            }
+          ]
+        }
+      ],
+      "CoinsAmount": 3,
+      "CoinsDatas": [
+        {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        {
+          "X": 0,
+          "Y": 0,
+          "Z": 5
+        },
+        {
+          "X": 5,
+          "Y": 0,
+          "Z": 0
+        }
+      ],
+      "PlayerStartPositon": {
+        "X": -1,
+        "Y": 0.1,
+        "Z": 0
+      },
+      "PlayerEndPositon": {
+        "X": 5,
+        "Y": 0.1,
+        "Z": -3.7
+      }
+    },
+    {
+      "Level": 2,
+      "hedgehogAmount": 1,
+      "HedgehogDatas": [
+        {
+          "HedgeHogPoints": [
+            {
+              "X": 0,
+              "Y": 0,
+              "Z": 0,
+              "Speed": 5
+            },
+            {
+              "X": 0,
+              "Y": 0,
+              "Z": 5,
+              "Speed": 4
+            },
+            {
+              "X": 5,
+              "Y": 0,
+              "Z": 0,
+              "Speed": 6
+            }
+          ]
+        }
+      ],
+      "CoinsAmount": 2,
+      "CoinsDatas": [
+        {
+          "X": 0,
+          "Y": 0,
+          "Z": 0
+        },
+        {
+          "X": 0,
+          "Y": 0,
+          "Z": 5
+        }
+      ],
+      "PlayerStartPositon": {
+        "X": 0,
+        "Y": 0,
+        "Z": 0
+      },
+      "PlayerEndPositon": {
+        "X": 5,
+        "Y": 0,
+        "Z": 5
+      }
+    }
+  ]
+}
