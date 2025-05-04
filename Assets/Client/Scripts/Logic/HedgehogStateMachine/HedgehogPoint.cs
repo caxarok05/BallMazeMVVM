@@ -21,7 +21,7 @@ namespace Client.Scripts.Logic
             float distance = direction.magnitude;
             direction.Normalize();
 
-            if (distance > 0.01f)
+            if (distance > 0.02f)
             {
                 hedgeHog.transform.Translate(direction * _speed * Time.deltaTime, Space.World);
                 hedgeHog.transform.rotation = Quaternion.LookRotation(-direction);

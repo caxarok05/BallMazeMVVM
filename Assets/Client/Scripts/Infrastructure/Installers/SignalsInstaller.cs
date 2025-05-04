@@ -15,8 +15,15 @@ namespace Client.Scripts.Infrastructure.Installers
 
             Container.DeclareSignal<OnBallClickedDown>();
             Container.DeclareSignal<OnBallClickedUp>();
+
             Container.DeclareSignal<RequestBallPosition>();
             Container.DeclareSignal<HitBorder>();
+            Container.DeclareSignal<ReadyToNextLevel>();
+            
+            Container.DeclareSignal<MoneyChanged>();
+
+            Container.DeclareSignal<BallSpeedChanged>();
+            Container.DeclareSignal<BallRotationChanged>();
         }
     }
 }

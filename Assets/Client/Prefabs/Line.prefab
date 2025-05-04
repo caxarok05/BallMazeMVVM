@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4779343949080317306}
   - component: {fileID: 1082731902991605990}
-  - component: {fileID: 5507447565972062794}
+  - component: {fileID: 9138087246994950276}
   m_Layer: 0
   m_Name: Line
   m_TagString: Untagged
@@ -146,7 +146,7 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
---- !u!114 &5507447565972062794
+--- !u!114 &9138087246994950276
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,6 +155,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8981148903455055581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f1c5a35bd7dfb74580726483d79f5da, type: 3}
+  m_Script: {fileID: 11500000, guid: cdf93c8f274244c4ba0c4b9a6dfcbc1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -2,7 +2,8 @@
   "LevelAmount": 2,
   "LevelData": [
     {
-      "Level": 1,
+      "Level": 0,
+      "HealthAmount": 3,
       "hedgehogAmount": 2,
       "HedgehogDatas": [
         {
@@ -65,81 +66,238 @@
       "CoinsAmount": 3,
       "CoinsDatas": [
         {
-          "X": 0,
-          "Y": 0,
-          "Z": 0
+          "X": -6,
+          "Y": 0.6,
+          "Z": -5
         },
         {
-          "X": 0,
-          "Y": 0,
-          "Z": 5
+          "X": 2.5,
+          "Y": 0.6,
+          "Z": -4
         },
         {
-          "X": 5,
-          "Y": 0,
-          "Z": 0
+          "X": 6,
+          "Y": 0.6,
+          "Z": 6
         }
       ],
       "PlayerStartPositon": {
         "X": -1,
-        "Y": 0.1,
+        "Y": 0.5,
         "Z": 0
       },
       "PlayerEndPositon": {
-        "X": 5,
+        "X": -2,
         "Y": 0.1,
-        "Z": -3.7
+        "Z": -3
       }
     },
     {
-      "Level": 2,
-      "hedgehogAmount": 1,
+      "Level": 1,
+      "HealthAmount": 3,
+      "hedgehogAmount": 3,
       "HedgehogDatas": [
         {
           "HedgeHogPoints": [
             {
-              "X": 0,
+              "X": -8,
               "Y": 0,
-              "Z": 0,
-              "Speed": 5
+              "Z": -9,
+              "Speed": 6
             },
             {
-              "X": 0,
+              "X": 8,
               "Y": 0,
-              "Z": 5,
+              "Z": -9,
+              "Speed": 7
+            }
+          ]
+        },
+        {
+          "HedgeHogPoints": [
+            {
+              "X": -8,
+              "Y": 0,
+              "Z": 8,
               "Speed": 4
             },
             {
-              "X": 5,
+              "X": 27,
               "Y": 0,
-              "Z": 0,
-              "Speed": 6
+              "Z": 8,
+              "Speed": 4
+            }
+          ]
+        },
+        {
+          "HedgeHogPoints": [
+            {
+              "X": 8,
+              "Y": 0,
+              "Z": -13,
+              "Speed": 7
+            },
+            {
+              "X": 8,
+              "Y": 0,
+              "Z": 6,
+              "Speed": 7
             }
           ]
         }
       ],
-      "CoinsAmount": 2,
+      "CoinsAmount": 4,
       "CoinsDatas": [
         {
-          "X": 0,
-          "Y": 0,
-          "Z": 0
+          "X": 26,
+          "Y": 0.6,
+          "Z": -8
         },
         {
-          "X": 0,
-          "Y": 0,
+          "X": -3,
+          "Y": 0.6,
+          "Z": -3
+        },
+        {
+          "X": -7,
+          "Y": 0.6,
+          "Z": -16
+        },
+        {
+          "X": 6,
+          "Y": 0.6,
+          "Z": 3
+        }
+      ],
+      "PlayerStartPositon": {
+        "X": 6,
+        "Y": 0.5,
+        "Z": -27
+      },
+      "PlayerEndPositon": {
+        "X": 14,
+        "Y": 0.1,
+        "Z": -7
+      }
+    },
+    {
+      "Level": 2,
+      "HealthAmount": 1,
+      "hedgehogAmount": 5,
+      "HedgehogDatas": [
+        {
+          "HedgeHogPoints": [
+            {
+              "X": 2,
+              "Y": 0,
+              "Z": -21,
+              "Speed": 7
+            },
+            {
+              "X": 2,
+              "Y": 0,
+              "Z": -32,
+              "Speed": 7
+            }
+          ]
+        },
+        {
+          "HedgeHogPoints": [
+            {
+              "X": 2,
+              "Y": 0,
+              "Z": -31,
+              "Speed": 6
+            },
+            {
+              "X": -12,
+              "Y": 0,
+              "Z": -31,
+              "Speed": 6
+            }
+          ]
+        },
+        {
+          "HedgeHogPoints": [
+            {
+              "X": -10,
+              "Y": 0,
+              "Z": -8,
+              "Speed": 8
+            },
+            {
+              "X": 0,
+              "Y": 0,
+              "Z": -8,
+              "Speed": 8
+            }
+          ]
+        },
+        {
+          "HedgeHogPoints": [
+            {
+              "X": 1,
+              "Y": 0,
+              "Z": 10,
+              "Speed": 6
+            },
+            {
+              "X": 9,
+              "Y": 0,
+              "Z": 10,
+              "Speed": 6
+            }
+          ]
+        },
+        {
+          "HedgeHogPoints": [
+            {
+              "X": -12,
+              "Y": 0,
+              "Z": -31,
+              "Speed": 7
+            },
+            {
+              "X": -12,
+              "Y": 0,
+              "Z": -12,
+              "Speed": 7
+            }
+          ]
+        }
+      ],
+      "CoinsAmount": 4,
+      "CoinsDatas": [
+        {
+          "X": -12,
+          "Y": 0.6,
+          "Z": -31
+        },
+        {
+          "X": 5,
+          "Y": 0.6,
+          "Z": -15
+        },
+        {
+          "X": 6,
+          "Y": 0.6,
+          "Z": -5
+        },
+        {
+          "X": -17,
+          "Y": 0.6,
           "Z": 5
         }
       ],
       "PlayerStartPositon": {
-        "X": 0,
-        "Y": 0,
-        "Z": 0
+        "X": -4.5,
+        "Y": 0.5,
+        "Z": -24.5
       },
       "PlayerEndPositon": {
         "X": 5,
-        "Y": 0,
-        "Z": 5
+        "Y": 0.1,
+        "Z": 15
       }
     }
   ]

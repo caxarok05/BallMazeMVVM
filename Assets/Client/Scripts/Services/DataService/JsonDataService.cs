@@ -2,16 +2,26 @@ using Newtonsoft.Json;
 using System.IO;
 using System;
 using UnityEngine;
+using Cysharp.Threading.Tasks.Linq;
+using Cysharp.Threading.Tasks;
+using Client.Scripts.Data;
+using Zenject;
 
 namespace Client.Scripts.Services
 {
     public class JsonDataService : IJsonDataService
     {
         private string JsonPath = Path.Combine(Application.streamingAssetsPath, "PlayerConfig.json");
+        public GameConfig GameConfig {  get; private set; }
+
+        public JsonDataService()
+        {
+            GameConfig = LoadData<GameConfig>();
+        }
 
         public T LoadData<T>()
         {
-            string path = /*Application.persistentDataPath + */JsonPath;
+            string path = JsonPath;
 
             if (!File.Exists(path))
             {

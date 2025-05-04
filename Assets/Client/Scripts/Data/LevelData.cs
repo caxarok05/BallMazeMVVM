@@ -6,6 +6,8 @@ namespace Client.Scripts.Data
     {
         public int Level;
 
+        public int HealthAmount;
+
         public int hedgehogAmount;
         public List<HedgehogData> HedgehogDatas = new List<HedgehogData>();
 

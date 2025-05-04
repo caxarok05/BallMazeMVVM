@@ -32,19 +32,12 @@ namespace Client.Scripts.Logic
             _signalBus.Subscribe<OnBallClickedDown>(ShowLine);
             _signalBus.Subscribe<OnBallClickedUp>(HideLine);
             _signalBus.Subscribe<HitBorder>(OnWallHit);
-            _signalBus.Subscribe<RequestBallPosition>(SetBallPosition);
         }
         public void Dispose()
         {
             _signalBus.TryUnsubscribe<OnBallClickedDown>(ShowLine);
             _signalBus.TryUnsubscribe<OnBallClickedUp>(HideLine);
             _signalBus.TryUnsubscribe<HitBorder>(OnWallHit);
-            _signalBus.TryUnsubscribe<RequestBallPosition>(SetBallPosition);
-        }
-
-        public void SetBallPosition()
-        {
-            _linePresenter.SetBallPosition(_ballPresenter.BallPosition);
         }
 
         public void ShowLine()
@@ -63,7 +56,8 @@ namespace Client.Scripts.Logic
             Vector3 reflectedVelocity = CustomVelocity.ReflectVector(args.ballVelocity, args.contactPointNormal);
             _ballPresenter.SetVelocity(reflectedVelocity);
             _rotationPresenter.SetRotationVector(reflectedVelocity);
-
         }
+
+
     }
 }

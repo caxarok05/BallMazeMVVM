@@ -1,20 +1,22 @@
-using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
-public class StandaloneInput : AbstractInput
+namespace Client.Scripts.Services
 {
-    public override bool GetInput()
+    public class StandaloneInput : AbstractInput
     {
-        return Input.GetMouseButton(0);
-    }
-
-    public override Vector3 GetVector(bool cameraToScreenWorldPoint = false)
-    {
-        if (cameraToScreenWorldPoint)
+        public override bool GetInput()
         {
-            return Camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.nearClipPlane));
+            return Input.GetMouseButton(0);
         }
 
-        return new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.nearClipPlane);
+        public override Vector3 GetVector(bool cameraToScreenWorldPoint = false)
+        {
+            if (cameraToScreenWorldPoint)
+            {
+                return Camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.nearClipPlane));
+            }
+
+            return new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.nearClipPlane);
+        }
     }
 }
