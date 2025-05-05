@@ -16,7 +16,7 @@ namespace Client.Scripts.UI
         private readonly IHealthService _healthService;
         private readonly SceneLoader _sceneLoader;
 
-        private const string _menuName = "MenuScene";
+        private const string _menuName = "MainMenu";
 
         public DeathPanelViewModel(IHealthService healthService, SceneLoader sceneLoader)
         {
