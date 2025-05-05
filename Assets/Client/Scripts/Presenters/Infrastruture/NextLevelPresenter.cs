@@ -1,5 +1,4 @@
-﻿using Client.Scripts.Infrastructure;
-using Client.Scripts.Infrastructure.Signals;
+﻿using Client.Scripts.Infrastructure.Signals;
 using Client.Scripts.Services;
 using UnityEngine;
 using Zenject;

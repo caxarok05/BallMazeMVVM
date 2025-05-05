@@ -2,10 +2,7 @@ using Newtonsoft.Json;
 using System.IO;
 using System;
 using UnityEngine;
-using Cysharp.Threading.Tasks.Linq;
-using Cysharp.Threading.Tasks;
 using Client.Scripts.Data;
-using Zenject;
 
 namespace Client.Scripts.Services
 {

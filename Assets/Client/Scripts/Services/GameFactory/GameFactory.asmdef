@@ -1,0 +1,24 @@
+{
+    "name": "GameFactory",
+    "rootNamespace": "",
+    "references": [
+        "GUID:8f3b75bc5fa49fc409681e7d43990a2b",
+        "GUID:c913993af63baee449ae55df2a2faf1d",
+        "GUID:f19838d83e7cd8d4a9b63619af01546b",
+        "GUID:bd6378f34aae3cb4fa2f6bb5fbf2cbc3",
+        "GUID:a39c76bdc3110a64fadea54092e0f2f7",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4",
+        "GUID:c3e96a3314fe1f84490bb3298fc31ff4",
+        "GUID:c5cf80f8b92421d4486096381baa1f3c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

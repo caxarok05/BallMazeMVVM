@@ -1,5 +1,4 @@
-﻿using Client.Scripts.Infrastructure;
-using Client.Scripts.Services;
+﻿using Client.Scripts.Services;
 using MVVM;
 using System;
 using UniRx;
