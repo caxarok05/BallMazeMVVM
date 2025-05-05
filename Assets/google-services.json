@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "800655556305",
+    "project_id": "ballmazemvvm",
+    "storage_bucket": "ballmazemvvm.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800655556305:android:2513557acba5f3c58e4ff0",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany.BallMazeMVVM"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjIhMO2KML6XEu3wbMzFvR45vzY0qR4KY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
