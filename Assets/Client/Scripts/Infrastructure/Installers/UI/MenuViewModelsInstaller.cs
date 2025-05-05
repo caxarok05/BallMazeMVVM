@@ -1,4 +1,4 @@
-﻿using Client.Scripts.UI.ViewModels;
+﻿using Client.Scripts.UI;
 using Zenject;
 
 namespace Assets.Client.Scripts.Infrastructure.Installers

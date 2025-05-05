@@ -23,7 +23,7 @@ namespace Client.Scripts.UI
         public Object view;
 
         [SerializeField]
-        public MonoScript viewType;
+        public string viewTypeName;
 
         [SerializeField]
         public string viewId;
@@ -36,7 +36,7 @@ namespace Client.Scripts.UI
         public Object viewModel;
 
         [SerializeField]
-        public MonoScript viewModelType;
+        public string viewModelTypeName;
 
         [SerializeField]
         public string viewModelId;
@@ -66,16 +66,16 @@ namespace Client.Scripts.UI
             object view = this.viewBinding switch
             {
                 BindingMode.FromInstance => this.view,
-                BindingMode.FromResolve => this.diContainer.Resolve(this.viewType.GetClass()),
-                BindingMode.FromResolveId => this.diContainer.ResolveId(this.viewType.GetClass(), this.viewId),
+                BindingMode.FromResolve => this.diContainer.Resolve(Type.GetType(this.viewTypeName)),
+                BindingMode.FromResolveId => this.diContainer.ResolveId(Type.GetType(this.viewTypeName), this.viewId),
                 _ => throw new Exception($"Binding type of view {this.viewBinding} is not found!")
             };
 
             object model = this.viewModelBinding switch
             {
                 BindingMode.FromInstance => this.viewModel,
-                BindingMode.FromResolve => this.diContainer.Resolve(this.viewModelType.GetClass()),
-                BindingMode.FromResolveId => this.diContainer.ResolveId(this.viewModelType.GetClass(), this.viewModelId),
+                BindingMode.FromResolve => this.diContainer.Resolve(Type.GetType(this.viewModelTypeName)),
+                BindingMode.FromResolveId => this.diContainer.ResolveId(Type.GetType(this.viewModelTypeName), this.viewModelId),
                 _ => throw new Exception($"Binding type of view {this.viewBinding} is not found!")
             };
 

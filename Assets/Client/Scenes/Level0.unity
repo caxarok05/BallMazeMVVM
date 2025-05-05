@@ -1286,11 +1286,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewBinding: 0
   view: {fileID: 861096556}
-  viewType: {fileID: 0}
+  viewTypeName: 
   viewId: 
   viewModelBinding: 1
   viewModel: {fileID: 0}
-  viewModelType: {fileID: 11500000, guid: b32bf159f537c4c4a9a73baa85adf4cc, type: 3}
+  viewModelTypeName: Client.Scripts.UI.HealthViewModel
   viewModelId: 
 --- !u!114 &861096558
 MonoBehaviour:
@@ -1539,11 +1539,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewBinding: 0
   view: {fileID: 922930200}
-  viewType: {fileID: 0}
+  viewTypeName: 
   viewId: 
   viewModelBinding: 1
   viewModel: {fileID: 11500000, guid: 3bff0ce1333f9f545a1ef65fed5521f0, type: 3}
-  viewModelType: {fileID: 11500000, guid: 3bff0ce1333f9f545a1ef65fed5521f0, type: 3}
+  viewModelTypeName: Client.Scripts.UI.MoneyViewModel
   viewModelId: 
 --- !u!114 &922930200
 MonoBehaviour:
@@ -2708,11 +2708,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewBinding: 0
   view: {fileID: 1629543393}
-  viewType: {fileID: 0}
+  viewTypeName: 
   viewId: 
   viewModelBinding: 1
   viewModel: {fileID: 0}
-  viewModelType: {fileID: 11500000, guid: f4a93ce333920fc49bb7b484b323b8ec, type: 3}
+  viewModelTypeName: Client.Scripts.UI.DeathPanelViewModel
   viewModelId: 
 --- !u!114 &1629543393
 MonoBehaviour:

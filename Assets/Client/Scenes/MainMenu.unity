@@ -1312,11 +1312,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewBinding: 0
   view: {fileID: 1686292891}
-  viewType: {fileID: 0}
+  viewTypeName: 
   viewId: 
   viewModelBinding: 1
   viewModel: {fileID: 0}
-  viewModelType: {fileID: 11500000, guid: 5b7b679a664a71b4396db48617c6ba6c, type: 3}
+  viewModelTypeName: Client.Scripts.UI.MenuViewModel
   viewModelId: 
 --- !u!114 &1686292891
 MonoBehaviour:

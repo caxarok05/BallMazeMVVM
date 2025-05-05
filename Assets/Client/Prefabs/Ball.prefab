@@ -466,11 +466,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewBinding: 0
   view: {fileID: 4316714393215777002}
-  viewType: {fileID: 0}
+  viewTypeName: 
   viewId: 
   viewModelBinding: 1
   viewModel: {fileID: 0}
-  viewModelType: {fileID: 11500000, guid: 173cb2ec127ed0a4488d7b6f1b1d517e, type: 3}
+  viewModelTypeName: Client.Scripts.UI.BallStatViewModel
   viewModelId: 
 --- !u!1 &7300370160599361818
 GameObject:

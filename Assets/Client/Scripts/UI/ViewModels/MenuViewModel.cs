@@ -4,7 +4,7 @@ using System;
 using UniRx;
 using Zenject;
 
-namespace Client.Scripts.UI.ViewModels
+namespace Client.Scripts.UI
 {
     public class MenuViewModel
     {
@@ -12,7 +12,7 @@ namespace Client.Scripts.UI.ViewModels
 
         private const string _levelScene = "Level0";
 
-        public MenuViewModel( SceneLoader sceneLoader)
+        public MenuViewModel(SceneLoader sceneLoader)
         {
             _sceneLoader = sceneLoader;
         }

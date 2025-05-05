@@ -18,7 +18,7 @@ public class MonoViewBinderEditor : Editor
         }
         if (binder.viewBinding == MonoViewBinder.BindingMode.FromResolve)
         {
-            binder.viewType = (MonoScript)EditorGUILayout.ObjectField("View Type", binder.viewType, typeof(MonoScript), false);
+            binder.viewTypeName = EditorGUILayout.TextField("View Type Name", binder.viewTypeName);
         }
         if (binder.viewBinding == MonoViewBinder.BindingMode.FromResolveId)
         {
@@ -35,7 +35,7 @@ public class MonoViewBinderEditor : Editor
         }
         if (binder.viewModelBinding == MonoViewBinder.BindingMode.FromResolve)
         {
-            binder.viewModelType = (MonoScript)EditorGUILayout.ObjectField("ViewModel Type", binder.viewModelType, typeof(MonoScript), false);
+            binder.viewModelTypeName = EditorGUILayout.TextField("ViewModel Type Name", binder.viewModelTypeName);
         }
         if (binder.viewModelBinding == MonoViewBinder.BindingMode.FromResolveId)
         {
