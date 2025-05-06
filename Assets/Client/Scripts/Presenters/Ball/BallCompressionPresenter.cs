@@ -1,19 +1,19 @@
 ﻿using Cysharp.Threading.Tasks;
-using System;
 using System.Threading;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Client.Scripts.Presenters
 {
     public class BallCompressionPresenter : MonoBehaviour
     {
-        private const float MinStrengthVector = 0.01f;
-        private const float MaxStrengthVector = 10;
         [SerializeField] private float _compressionSpeed = 5;
+        
         private Vector3 _normalScale = Vector3.one;
         private Vector3 _maxCompressedScale = new Vector3(1, 1, 0.2f);
         private UniTask _compressionTask;
+
+        private const float MinStrengthVector = 0.01f;
+        private const float MaxStrengthVector = 10;
 
         public void TryCompress(Vector3 velocity)
         {
@@ -22,7 +22,7 @@ namespace Client.Scripts.Presenters
                 _compressionTask = CompressBall(velocity, this.GetCancellationTokenOnDestroy());
             }
         }
-        public async UniTask CompressBall(Vector3 velocity, CancellationToken ct = default)
+        private async UniTask CompressBall(Vector3 velocity, CancellationToken ct = default)
         {
             Vector3 compression = CustomVelocity.CalculateCompressionStrength(
                 velocity, 

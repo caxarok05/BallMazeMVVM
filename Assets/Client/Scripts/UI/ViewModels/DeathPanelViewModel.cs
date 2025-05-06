@@ -2,7 +2,6 @@
 using MVVM;
 using System;
 using UniRx;
-using UnityEngine;
 using Zenject;
 
 namespace Client.Scripts.UI

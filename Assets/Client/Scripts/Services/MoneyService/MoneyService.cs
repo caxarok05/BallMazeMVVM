@@ -1,7 +1,5 @@
 ﻿using Client.Scripts.Data;
 using Client.Scripts.Infrastructure.Signals;
-using System;
-using UnityEngine;
 using Zenject;
 
 namespace Client.Scripts.Services

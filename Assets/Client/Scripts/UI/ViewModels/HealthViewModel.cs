@@ -1,11 +1,7 @@
-using Client.Scripts.Data;
 using Client.Scripts.Services;
 using MVVM;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UniRx;
-using UnityEngine;
 using Zenject;
 
 namespace Client.Scripts.UI

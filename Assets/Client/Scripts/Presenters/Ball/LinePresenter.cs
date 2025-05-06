@@ -1,7 +1,5 @@
-﻿using Client.Scripts.Infrastructure.Signals;
-using Client.Scripts.Services;
+﻿using Client.Scripts.Services;
 using UnityEngine;
-using UnityEngine.Events;
 using Zenject;
 
 namespace Client.Scripts.Presenters
@@ -13,14 +11,12 @@ namespace Client.Scripts.Presenters
         private Vector3 _ballPosition;
         private LineRenderer _line;
         private AbstractInput _inputService;
-        private SignalBus _signalBus;
-        private BallPresenter _ballPresenter;
+        private GameBallPresenter _ballPresenter;
 
         [Inject]
-        public void Construct(AbstractInput input, SignalBus signalBus, BallPresenter ballPresenter)
+        public void Construct(AbstractInput input, GameBallPresenter ballPresenter)
         {
             _inputService = input;
-            _signalBus = signalBus;
             _ballPresenter = ballPresenter;
         }
 
@@ -42,6 +38,16 @@ namespace Client.Scripts.Presenters
         public void SetBallPosition(Vector3 position) => _ballPosition = position;
 
         public void SetLineOn() => gameObject.SetActive(true);
-        public void SetLineOff() => gameObject.SetActive(false);
+        public void SetLineOff()
+        {
+            gameObject.SetActive(false);
+            ResetLine();
+        }
+
+        private void ResetLine()
+        {
+            _line.SetPosition(0, Vector3.zero);
+            _line.SetPosition(1, Vector3.zero);
+        }
     }
 }

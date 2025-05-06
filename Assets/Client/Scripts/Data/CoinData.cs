@@ -1,6 +1,6 @@
 ﻿namespace Client.Scripts.Data
 {
-    public class CoinData
+    public struct CoinData
     {
         public float X;
         public float Y;

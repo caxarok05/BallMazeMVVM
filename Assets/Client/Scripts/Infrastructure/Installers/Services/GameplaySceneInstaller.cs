@@ -1,6 +1,5 @@
 ﻿using Client.Scripts.Infrastructure.AssetManagement;
 using Client.Scripts.LogicModels;
-using Client.Scripts.Presenters;
 using Client.Scripts.Services;
 using UnityEngine;
 using Zenject;
@@ -27,10 +26,12 @@ namespace Client.Scripts.Infrastructure.Installers
 
         private void CreateEnvironment()
         {
-            Container.Resolve<IGameFactory>().CreateEnemy();
-            Container.Resolve<IGameFactory>().CreateMoney();
-            Container.Resolve<IGameFactory>().CreateStartPoint();
-            Container.Resolve<IGameFactory>().CreateFinishPoint();
+            IGameFactory factory = Container.Resolve<IGameFactory>();
+
+            factory.CreateEnemy();
+            factory.CreateMoney();
+            factory.CreateStartPoint();
+            factory.CreateFinishPoint();
         }
 
         private void BindMoneyService()

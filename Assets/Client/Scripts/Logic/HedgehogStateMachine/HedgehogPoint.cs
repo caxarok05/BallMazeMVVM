@@ -8,6 +8,8 @@ namespace Client.Scripts.Logic
         private float _speed;
         private IStateMachineState _stateMachine;
 
+        private const float StopDistance = 0.02f;
+
         public HedgehogPoint(Vector3 point, float speed, IStateMachineState stateMachine)
         {
             _point = point;
@@ -21,7 +23,7 @@ namespace Client.Scripts.Logic
             float distance = direction.magnitude;
             direction.Normalize();
 
-            if (distance > 0.02f)
+            if (distance > StopDistance)
             {
                 hedgeHog.transform.Translate(direction * _speed * Time.deltaTime, Space.World);
                 hedgeHog.transform.rotation = Quaternion.LookRotation(-direction);

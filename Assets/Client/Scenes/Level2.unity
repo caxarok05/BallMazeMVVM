@@ -4660,13 +4660,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 48417692847961713, guid: c6e29e1d8c3fada47afb3a276c36fbc2, type: 3}
+      propertyPath: _compressionSpeed
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 3683692002750398917, guid: c6e29e1d8c3fada47afb3a276c36fbc2, type: 3}
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
     - target: {fileID: 5958669714777064987, guid: c6e29e1d8c3fada47afb3a276c36fbc2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5
+      value: -4.75
       objectReference: {fileID: 0}
     - target: {fileID: 5958669714777064987, guid: c6e29e1d8c3fada47afb3a276c36fbc2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4674,7 +4678,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5958669714777064987, guid: c6e29e1d8c3fada47afb3a276c36fbc2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -24.5
+      value: -26.68
       objectReference: {fileID: 0}
     - target: {fileID: 5958669714777064987, guid: c6e29e1d8c3fada47afb3a276c36fbc2, type: 3}
       propertyPath: m_LocalRotation.w

@@ -7,6 +7,8 @@ namespace Client.Scripts.Presenters
     {
         public CanvasGroup Curtain;
 
+        private const int DelationTime = 30;
+
         private void Awake()
         {
             DontDestroyOnLoad(this);
@@ -27,7 +29,7 @@ namespace Client.Scripts.Presenters
             while (Curtain.alpha > 0)
             {
                 Curtain.alpha -= 0.03f;
-                await UniTask.Delay(30);
+                await UniTask.Delay(DelationTime);
             }
 
             gameObject.SetActive(false);

@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 968dec5ba9cb4ca4f8a46375a256914c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ballPresenter: {fileID: 1456588753}
+  _ballPresenter: {fileID: 1456588757}
   _compressionPresenter: {fileID: 775089695}
   _rotationPresenter: {fileID: 775089696}
 --- !u!1 &573418044
@@ -1045,7 +1045,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1438218780}
   m_CullTransparentMesh: 1
---- !u!114 &1456588753
+--- !u!114 &1456588757
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1054,7 +1054,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1410518268}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1873e71949765274da403eefcda832cd, type: 3}
+  m_Script: {fileID: 11500000, guid: fb9fb22f1db529e4f934054216355895, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1576701353
@@ -1857,7 +1857,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3683692002750398917, guid: c6e29e1d8c3fada47afb3a276c36fbc2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1456588753}
+      addedObject: {fileID: 1456588757}
   m_SourcePrefab: {fileID: 100100000, guid: c6e29e1d8c3fada47afb3a276c36fbc2, type: 3}
 --- !u!1001 &2567644420735071992
 PrefabInstance:

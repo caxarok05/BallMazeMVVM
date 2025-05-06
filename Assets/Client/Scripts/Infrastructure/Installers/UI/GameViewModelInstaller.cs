@@ -1,6 +1,4 @@
 ﻿using Client.Scripts.UI;
-using Client.Scripts.UI.Views;
-using System.ComponentModel;
 using Zenject;
 
 namespace Client.Scripts.Infrastructure.Installers

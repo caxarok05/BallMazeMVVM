@@ -1,5 +1,4 @@
-﻿
-namespace Client.Scripts.Infrastructure.Signals
+﻿namespace Client.Scripts.Infrastructure.Signals
 {
     public class BallRotationChanged
     {

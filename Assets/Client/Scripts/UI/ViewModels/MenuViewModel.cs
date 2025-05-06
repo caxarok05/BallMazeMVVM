@@ -1,8 +1,5 @@
 ﻿using Client.Scripts.Services;
 using MVVM;
-using System;
-using UniRx;
-using Zenject;
 
 namespace Client.Scripts.UI
 {

@@ -4,7 +4,6 @@ using MVVM;
 using System;
 using UniRx;
 using Zenject;
-using UnityEngine;
 
 namespace Client.Scripts.UI
 {

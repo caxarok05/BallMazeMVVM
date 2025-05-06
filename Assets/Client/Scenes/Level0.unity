@@ -1159,6 +1159,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1082731902991605990, guid: 488dc1f9eb0ea66418b0bef0c0d80acb, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082731902991605990, guid: 488dc1f9eb0ea66418b0bef0c0d80acb, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082731902991605990, guid: 488dc1f9eb0ea66418b0bef0c0d80acb, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082731902991605990, guid: 488dc1f9eb0ea66418b0bef0c0d80acb, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082731902991605990, guid: 488dc1f9eb0ea66418b0bef0c0d80acb, type: 3}
+      propertyPath: m_Parameters.colorGradient.key1.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4779343949080317306, guid: 488dc1f9eb0ea66418b0bef0c0d80acb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

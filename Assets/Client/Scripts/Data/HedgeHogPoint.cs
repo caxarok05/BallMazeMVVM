@@ -1,6 +1,6 @@
 ﻿namespace Client.Scripts.Data
 {
-    public class HedgeHogPoint
+    public struct HedgeHogPoint
     {
         public float X;
         public float Y;

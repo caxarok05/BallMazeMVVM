@@ -1,6 +1,5 @@
 ﻿using Client.Scripts.Data;
 using Client.Scripts.Services;
-using Cysharp.Threading.Tasks;
 using System;
 using UnityEngine;
 using Zenject;
@@ -13,13 +12,13 @@ namespace Client.Scripts.Presenters
 
         private int _currentLevel;
         private IHealthService _healthService;
-        private BallPresenter _ballPresenter;
+        private GameBallPresenter _ballPresenter;
         private GameConfig _gameConfig;
         
         private const string RespawnTrigger = "RespawnBall";
         
         [Inject]
-        public void Construct(int level, IJsonDataService dataService, BallPresenter ballPresenter, IHealthService healthService)
+        public void Construct(int level, IJsonDataService dataService, GameBallPresenter ballPresenter, IHealthService healthService)
         {
             _gameConfig = dataService.GameConfig;
             _currentLevel = level;

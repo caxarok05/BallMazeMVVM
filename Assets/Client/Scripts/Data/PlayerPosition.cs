@@ -1,6 +1,6 @@
 ﻿namespace Client.Scripts.Data
 {
-    public class PlayerPosition
+    public struct PlayerPosition
     {
         public float X;
         public float Y;
