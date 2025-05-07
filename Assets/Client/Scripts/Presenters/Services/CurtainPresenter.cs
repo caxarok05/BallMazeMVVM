@@ -8,6 +8,8 @@ namespace Client.Scripts.Presenters
         public CanvasGroup Curtain;
 
         private const int DelationTime = 30;
+        private const int LoadingDuraton = 2;
+        private const float АlphaFadeStep = 0.03f;
 
         private void Awake()
         {
@@ -25,10 +27,10 @@ namespace Client.Scripts.Presenters
 
         private async UniTaskVoid DoFadeIn()
         {
-            await UniTask.WaitForSeconds(2);
+            await UniTask.WaitForSeconds(LoadingDuraton);
             while (Curtain.alpha > 0)
             {
-                Curtain.alpha -= 0.03f;
+                Curtain.alpha -= АlphaFadeStep;
                 await UniTask.Delay(DelationTime);
             }
 
