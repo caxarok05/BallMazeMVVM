@@ -10,6 +10,8 @@ namespace Client.Scripts.Logic
 {
     public class MenuBall : BaseBall
     {
+        private const float MaxRandomVelocity = 10f;
+
         private readonly MenuBallPresenter _ballPresenter;
         private readonly CancellationTokenSource _tokenSource = new();
 
@@ -43,7 +45,7 @@ namespace Client.Scripts.Logic
             while (!ct.IsCancellationRequested)
             {
                 await UniTask.WaitForSeconds(3, false, PlayerLoopTiming.Update, ct);
-                Vector3 randomVelocity = new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f));
+                Vector3 randomVelocity = new Vector3(Random.Range(-MaxRandomVelocity, MaxRandomVelocity), 0, Random.Range(-MaxRandomVelocity, MaxRandomVelocity));
                 _ballPresenter.SetVelocity(randomVelocity);
                 _rotationPresenter.SetRotationVector(randomVelocity);
             }
